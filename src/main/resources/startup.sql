@@ -1,0 +1,13 @@
+--CREATE TABLE IF NOT EXISTS accounts (
+--	id SERIAL,
+--	phone_model varchar(30),
+--	phone_imei varchar(30),
+--	phone_number varchar(30),
+--	first_name varchar(20),
+--	last_name varchar(20),
+--	birth_date date,
+--	email varchar(30),
+--	password varchar(30),
+--	secret_answers text[],
+--	PRIMARY KEY (id)
+--);
