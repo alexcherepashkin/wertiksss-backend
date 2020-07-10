@@ -30,33 +30,33 @@ public class MainController {
 //        return "Hello Alex!!";
 //    }
 
-    @GetMapping("/accounts/search")
+    @GetMapping("/persons/search")
     public List<Person> findAllByTerm(@RequestParam(name = "term", required = false) String term,
             @RequestParam(name = "option", required = false) String option) {
         return service.findAllByTerm(term, option);
     }
 
-    @GetMapping("/accounts/{id}")
+    @GetMapping("/persons/{id}")
     public Person findById(@PathVariable("id") Long id) throws DomainException {
         return service.findById(id);
     }
 
-    @GetMapping("/accounts")
+    @GetMapping("/persons")
     public List<Person> findAll() {
         return service.findAll();
     }
 
-    @PostMapping("/accounts")
+    @PostMapping("/persons")
     public Person savePerson(@RequestBody Person person) throws DomainException {
         return service.savePerson(person);
     }
 
-    @PutMapping("/accounts/{id}")
+    @PutMapping("/persons/{id}")
     public Person updatePerson(@RequestBody Person person) throws DomainException {
         return service.updatePerson(person);
     }
 
-    @DeleteMapping("/accounts/{id}")
+    @DeleteMapping("/persons/{id}")
     public void removePerson(@PathVariable("id") Long id) throws DomainException {
         service.removePerson(id);
     }
