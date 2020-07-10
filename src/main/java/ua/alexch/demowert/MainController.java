@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(path = "/persons")
+@RequestMapping(path = "/")
 //@CrossOrigin(allowedHeaders = { "*" }, origins = { "*", "http://localhost:4200", "http://localhost:8080" })
 public class MainController {
     private final PersonService service;
@@ -24,33 +24,38 @@ public class MainController {
         this.service = service;
     }
 
-    @GetMapping("/search")
+    @GetMapping
+    public String hello() {
+        return "Hello AlexCH!!";
+    }
+
+    @GetMapping("/persons/search")
     public List<Person> findAllByTerm(@RequestParam(name = "term", required = false) String term,
             @RequestParam(name = "option", required = false) String option) {
         return service.findAllByTerm(term, option);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/persons/{id}")
     public Person findById(@PathVariable("id") Long id) throws DomainException {
         return service.findById(id);
     }
 
-    @GetMapping
+    @GetMapping("/persons")
     public List<Person> findAll() {
         return service.findAll();
     }
 
-    @PostMapping
+    @PostMapping("/persons")
     public Person savePerson(@RequestBody Person person) throws DomainException {
         return service.savePerson(person);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/persons/{id}")
     public Person updatePerson(@RequestBody Person person) throws DomainException {
         return service.updatePerson(person);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/persons/{id}")
     public void removePerson(@PathVariable("id") Long id) throws DomainException {
         service.removePerson(id);
     }
