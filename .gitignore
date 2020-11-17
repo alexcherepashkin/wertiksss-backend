@@ -1,31 +1,38 @@
-HELP.md
-target/
-!.mvn/wrapper/maven-wrapper.jar
+### Java
 !**/src/main/**
 !**/src/test/**
+*.class
+.mtj.tmp/
+*.jar
+*.war
+*.ear
+hs_err_pid*
 
-### STS ###
-.apt_generated
+
+### Maven
+log/
+target/
+.mvn/
+HELP.md
+mvnw.*
+
+
+### Eclipse
+.metadata
 .classpath
-.factorypath
 .project
-.settings
-.springBeans
-.sts4-cache
+.settings/
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.loadpath
 
-### IntelliJ IDEA ###
+
+### Idea
 .idea
-*.iws
+.idea/
 *.iml
-*.ipr
-
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-build/
-
-### VS Code ###
-.vscode/
