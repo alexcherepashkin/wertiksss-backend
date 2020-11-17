@@ -47,7 +47,7 @@ public class User implements UserDetails {
     @NotBlank(message = "Username is required")
     @Size(max = 20, message = "Username must be at most 20 characters long")
     @UniqueUsername(message = "Username already exists")
-    @Column(name = "us_name")
+    @Column(name = "username")
     private String username;
 
     @Size(max = 50, message = "Email must be at most 50 characters long")
@@ -57,14 +57,14 @@ public class User implements UserDetails {
     @NotBlank(message = "Password cannot be empty")
     @Size(min = 6, max = 200, message = "Password must be between 6 and 20 characters long")
     @JsonProperty(access = Access.WRITE_ONLY)
-    @Column(name = "us_password")
+    @Column(name = "password")
     private String password;
 
     @Column(columnDefinition = "BOOLEAN DEFAULT TRUE")
     private boolean active = true;
 
     @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
-    @CollectionTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"))
+    @CollectionTable(name = "w_user_role", joinColumns = @JoinColumn(name = "user_id"))
     @Enumerated(EnumType.STRING)
     private Set<Role> roles = new HashSet<>();
 
