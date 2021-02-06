@@ -1,4 +1,4 @@
-# Wertiksss (back-end) [![HitCount](http://hits.dwyl.com/alexcherepashkin/wertiksss-backend.svg)](http://hits.dwyl.com/alexcherepashkin/wertiksss-backend)
+# Wertiksss (back-end) [![Build Status](https://travis-ci.com/alexcherepashkin/wertiksss-backend.svg?branch=master)](https://travis-ci.com/alexcherepashkin/wertiksss-backend)
 ---
   
 About
